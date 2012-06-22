@@ -7,11 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
+#import "DataSet.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
+{
+    Facebook *facebook;
+    DataSet *apiData;
+    NSMutableDictionary *userPermissions;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (nonatomic, retain) UINavigationController *navigationController;
+
+@property (nonatomic, retain) Facebook *facebook;
+
+@property (nonatomic, retain) DataSet *apiData;
+
+@property (nonatomic, retain) NSMutableDictionary *userPermissions;
 
 @end
