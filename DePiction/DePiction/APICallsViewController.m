@@ -363,9 +363,9 @@
     NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
     // Dialog parameters
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"I'm using the Hackbook for iOS app", @"name",
-                                   @"Hackbook for iOS.", @"caption",
-                                   @"Check out Hackbook for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
+                                   @"I'm using the DePiction for iOS app", @"name",
+                                   @"DePiction for iOS.", @"caption",
+                                   @"Check out DePiction for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
                                    @"http://m.facebook.com/apps/hackbookios/", @"link",
                                    @"http://www.facebookmobileweb.com/hackbook/img/facebook_icon_large.png", @"picture",
                                    actionLinksStr, @"actions",
@@ -401,9 +401,9 @@
     // The "to" parameter targets the post to a friend
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    friendID, @"to",
-                                   @"I'm using the Hackbook for iOS app", @"name",
-                                   @"Hackbook for iOS.", @"caption",
-                                   @"Check out Hackbook for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
+                                   @"I'm using the DePiction for iOS app", @"name",
+                                   @"DePiction for iOS.", @"caption",
+                                   @"Check out DePiction for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
                                    @"http://m.facebook.com/apps/hackbookios/", @"link",
                                    @"http://www.facebookmobileweb.com/hackbook/img/facebook_icon_large.png", @"picture",
                                    actionLinksStr, @"actions",
@@ -464,13 +464,18 @@
  * Dialog: Requests - send to friends not currently using the app.
  */
 - (void)apiDialogRequestsSendToNonUsers:(NSArray *)selectIDs {
+    NSLog(@"HERE");
     currentAPICall = kDialogRequestsSendToSelect;
     NSString *selectIDsStr = [selectIDs componentsJoinedByString:@","];
-    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+   NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    @"Learn how to make your iOS apps social.",  @"message",
                                    @"Check this out", @"notification_text",
                                    selectIDsStr, @"suggestions",
                                    nil];
+
+   
+    
+
 
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [[delegate facebook] dialog:@"apprequests"
@@ -486,7 +491,7 @@
     currentAPICall = kDialogRequestsSendToSelect;
     NSString *selectIDsStr = [selectIDs componentsJoinedByString:@","];
     NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"It's your turn to visit the Hackbook for iOS app.",  @"message",
+                                   @"It's your turn to visit the DePiction for iOS app.",  @"message",
                                    selectIDsStr, @"suggestions",
                                    nil];
 

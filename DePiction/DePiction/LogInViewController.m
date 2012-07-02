@@ -143,7 +143,7 @@
     // Set up the view programmatically
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.navigationItem.title = @"Hackbook for iOS";
+    self.navigationItem.title = @"DePiction for iOS";
     
     self.navigationItem.backBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:@"Back"
@@ -366,7 +366,7 @@
  * which is passed the parsed response object.
  */
 - (void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
-    //NSLog(@"received response");
+   // NSLog(@"received response %@",response);
 }
 
 /**
