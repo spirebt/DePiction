@@ -86,15 +86,10 @@
     apiMenuItems = [[NSArray arrayWithArray:[apiData objectForKey:@"menu"]] retain];
     apiHeader = [[apiData objectForKey:@"description"] retain];
 
-    self.navigationItem.backBarButtonItem =
-    [[[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                      style:UIBarButtonItemStyleBordered
-                                     target:nil
-                                     action:nil] autorelease];
+    self.navigationItem.backBarButtonItem =[[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
 
     // Main Menu Table
-    apiTableView = [[UITableView alloc] initWithFrame:self.view.bounds
-                                                            style:UITableViewStylePlain];
+    apiTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [apiTableView setBackgroundColor:[UIColor whiteColor]];
     apiTableView.dataSource = self;
     apiTableView.delegate = self;
@@ -115,18 +110,11 @@
     messageView.backgroundColor = [UIColor lightGrayColor];
 
     UIView *messageInsetView = [[UIView alloc] initWithFrame:CGRectMake(1, 1, self.view.bounds.size.width-1, 28)];
-    messageInsetView.backgroundColor = [UIColor colorWithRed:255.0/255.0
-                                                   green:248.0/255.0
-                                                    blue:228.0/255.0
-                                                   alpha:1];
-    messageLabel = [[UILabel alloc]
-                             initWithFrame:CGRectMake(4, 1, self.view.bounds.size.width-10, 26)];
+    messageInsetView.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:248.0/255.0 blue:228.0/255.0 alpha:1];
+    messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(4, 1, self.view.bounds.size.width-10, 26)];
     messageLabel.text = @"";
     messageLabel.font = [UIFont fontWithName:@"Helvetica" size:14.0];
-    messageLabel.backgroundColor = [UIColor colorWithRed:255.0/255.0
-                                                  green:248.0/255.0
-                                                   blue:228.0/255.0
-                                                  alpha:0.6];
+    messageLabel.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:248.0/255.0 blue:228.0/255.0 alpha:0.6];
     [messageInsetView addSubview:messageLabel];
     [messageView addSubview:messageInsetView];
     [messageInsetView release];
@@ -363,9 +351,9 @@
     NSString *actionLinksStr = [jsonWriter stringWithObject:actionLinks];
     // Dialog parameters
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"I'm using the DePiction for iOS app", @"name",
-                                   @"DePiction for iOS.", @"caption",
-                                   @"Check out DePiction for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
+                                   @"I'm using the Hackbook for iOS app", @"name",
+                                   @"Hackbook for iOS.", @"caption",
+                                   @"Check out Hackbook for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
                                    @"http://m.facebook.com/apps/hackbookios/", @"link",
                                    @"http://www.facebookmobileweb.com/hackbook/img/facebook_icon_large.png", @"picture",
                                    actionLinksStr, @"actions",
@@ -401,9 +389,9 @@
     // The "to" parameter targets the post to a friend
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    friendID, @"to",
-                                   @"I'm using the DePiction for iOS app", @"name",
-                                   @"DePiction for iOS.", @"caption",
-                                   @"Check out DePiction for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
+                                   @"I'm using the Hackbook for iOS app", @"name",
+                                   @"Hackbook for iOS.", @"caption",
+                                   @"Check out Hackbook for iOS to learn how you can make your iOS apps social using Facebook Platform.", @"description",
                                    @"http://m.facebook.com/apps/hackbookios/", @"link",
                                    @"http://www.facebookmobileweb.com/hackbook/img/facebook_icon_large.png", @"picture",
                                    actionLinksStr, @"actions",
@@ -491,7 +479,7 @@
     currentAPICall = kDialogRequestsSendToSelect;
     NSString *selectIDsStr = [selectIDs componentsJoinedByString:@","];
     NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"It's your turn to visit the DePiction for iOS app.",  @"message",
+                                   @"It's your turn to visit the Hackbook for iOS app.",  @"message",
                                    selectIDsStr, @"suggestions",
                                    nil];
 
