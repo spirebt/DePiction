@@ -15,6 +15,7 @@
     Facebook *facebook;
     DataSet *apiData;
     NSMutableDictionary *userPermissions;
+    NSString *tokenString;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -26,5 +27,7 @@
 @property (nonatomic, retain) DataSet *apiData;
 
 @property (nonatomic, retain) NSMutableDictionary *userPermissions;
+
+@property(nonatomic, strong) NSString *tokenString;
 
 @end

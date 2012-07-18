@@ -11,7 +11,7 @@
 #import "APICallsViewController.h"
 #import "ASIHTTPRequest.h"
 #import <MessageUI/MessageUI.h>
-@interface LogInViewController : UITableViewController <FBRequestDelegate,FBDialogDelegate,FBSessionDelegate,MFMailComposeViewControllerDelegate>
+@interface LogInViewController : UITableViewController <FBRequestDelegate,FBDialogDelegate,FBSessionDelegate,MFMailComposeViewControllerDelegate,UIAlertViewDelegate>
 {
     NSArray *contentForRow;
     NSArray *permissions;

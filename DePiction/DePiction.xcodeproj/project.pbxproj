@@ -58,8 +58,11 @@
 		1BCC03E71594791000B412F7 /* APICallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC03E2159477E800B412F7 /* APICallsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1BCC03E81594791700B412F7 /* APIResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCC03E4159477E800B412F7 /* APIResultsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1BCC03EA15947C6500B412F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BCC03E915947C6500B412F7 /* CoreLocation.framework */; };
+		1BF0FCBE15B6AC7D000E2F3C /* VsComViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0FCBC15B6AC7D000E2F3C /* VsComViewController.m */; };
+		1BF0FCBF15B6AC7D000E2F3C /* VsComViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0FCBD15B6AC7D000E2F3C /* VsComViewController.xib */; };
+		1BF0FCCD15B6F395000E2F3C /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF0FCCB15B6F395000E2F3C /* GameViewController.m */; };
+		1BF0FCCE15B6F395000E2F3C /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BF0FCCC15B6F395000E2F3C /* GameViewController.xib */; };
 		1BFBF67F15B59B4400432214 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C059915B59ADD003802FD /* LogInViewController.m */; };
-		1BFBF68215B5A63500432214 /* _test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1BFBF68115B5A63500432214 /* _test.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,7 +152,12 @@
 		1BCC03E3159477E800B412F7 /* APIResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResultsViewController.h; sourceTree = "<group>"; };
 		1BCC03E4159477E800B412F7 /* APIResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResultsViewController.m; sourceTree = "<group>"; };
 		1BCC03E915947C6500B412F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		1BFBF68115B5A63500432214 /* _test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = _test.jpg; sourceTree = "<group>"; };
+		1BF0FCBB15B6AC7D000E2F3C /* VsComViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VsComViewController.h; sourceTree = "<group>"; };
+		1BF0FCBC15B6AC7D000E2F3C /* VsComViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VsComViewController.m; sourceTree = "<group>"; };
+		1BF0FCBD15B6AC7D000E2F3C /* VsComViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VsComViewController.xib; sourceTree = "<group>"; };
+		1BF0FCCA15B6F395000E2F3C /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		1BF0FCCB15B6F395000E2F3C /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		1BF0FCCC15B6F395000E2F3C /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +238,6 @@
 		1BCC030E159461F600B412F7 = {
 			isa = PBXGroup;
 			children = (
-				1BFBF68015B5A62000432214 /* JSON */,
 				1BAA4C6915A2DF28009094CE /* FBConnect.bundle */,
 				1BCC03CB159472B000B412F7 /* facebook-ios-sdk */,
 				1BCC0323159461F600B412F7 /* DePiction */,
@@ -277,6 +284,12 @@
 				1B5C059B15B59ADD003802FD /* LogInViewController.h */,
 				1B5C059915B59ADD003802FD /* LogInViewController.m */,
 				1B5C059A15B59ADD003802FD /* LogInViewController.xib */,
+				1BF0FCBB15B6AC7D000E2F3C /* VsComViewController.h */,
+				1BF0FCBC15B6AC7D000E2F3C /* VsComViewController.m */,
+				1BF0FCBD15B6AC7D000E2F3C /* VsComViewController.xib */,
+				1BF0FCCA15B6F395000E2F3C /* GameViewController.h */,
+				1BF0FCCB15B6F395000E2F3C /* GameViewController.m */,
+				1BF0FCCC15B6F395000E2F3C /* GameViewController.xib */,
 				1BCC032F159461F600B412F7 /* MasterViewController.h */,
 				1BCC0330159461F600B412F7 /* MasterViewController.m */,
 				1BCC0335159461F600B412F7 /* MasterViewController.xib */,
@@ -344,14 +357,6 @@
 				1BCC03DA159472B000B412F7 /* SBJsonWriter.h */,
 			);
 			path = "facebook-ios-sdk";
-			sourceTree = "<group>";
-		};
-		1BFBF68015B5A62000432214 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				1BFBF68115B5A63500432214 /* _test.jpg */,
-			);
-			name = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,7 +435,8 @@
 				1BCC03DB159472B000B412F7 /* FBDialog.bundle in Resources */,
 				1BAA4C6A15A2DF28009094CE /* FBConnect.bundle in Resources */,
 				1B5C058C15B56468003802FD /* background.jpg in Resources */,
-				1BFBF68215B5A63500432214 /* _test.jpg in Resources */,
+				1BF0FCBF15B6AC7D000E2F3C /* VsComViewController.xib in Resources */,
+				1BF0FCCE15B6F395000E2F3C /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +489,8 @@
 				1BCC032E159461F600B412F7 /* AppDelegate.m in Sources */,
 				1BCC0331159461F600B412F7 /* MasterViewController.m in Sources */,
 				1BCC0334159461F600B412F7 /* DetailViewController.m in Sources */,
+				1BF0FCBE15B6AC7D000E2F3C /* VsComViewController.m in Sources */,
+				1BF0FCCD15B6F395000E2F3C /* GameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +567,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -584,6 +593,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -601,6 +611,7 @@
 		1BCC0353159461F700B412F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DePiction/DePiction-Prefix.pch";
 				INFOPLIST_FILE = "DePiction/DePiction-Info.plist";
@@ -616,6 +627,7 @@
 		1BCC0354159461F700B412F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DePiction/DePiction-Prefix.pch";
 				INFOPLIST_FILE = "DePiction/DePiction-Info.plist";

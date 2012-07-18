@@ -18,6 +18,7 @@ static NSString* kAppId = @"406381349412676";
 @synthesize facebook;
 @synthesize apiData;
 @synthesize userPermissions;
+@synthesize tokenString;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -32,7 +33,20 @@ static NSString* kAppId = @"406381349412676";
     userPermissions = [[NSMutableDictionary alloc] initWithCapacity:1];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
     return YES;
+}
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+	NSLog(@"My token is: %@", deviceToken);
+    tokenString = [deviceToken bytes];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [facebook handleOpenURL:url]; 

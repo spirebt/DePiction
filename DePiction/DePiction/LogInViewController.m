@@ -12,6 +12,7 @@
 #import "APICallsViewController.h"
 #import "ASIFormDataRequest.h"
 #import "SBJSON.h"
+#import "VsComViewController.h"
 static NSString* kAppId = @"406381349412676";
 
 @interface LogInViewController ()
@@ -133,50 +134,7 @@ static NSString* kAppId = @"406381349412676";
                                      andParams:params
                                  andHttpMethod:@"POST"
                                    andDelegate:self];
-    
-    //post to server
-
-    
-     NSURL *url = [NSURL URLWithString:@"http://virtualcarmods.com/DEV/SHOOTUP/dbmanipulation/dbmanipulation.php?function=insert"];
-     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-     
-    [request setPostValue:@"mile malio" forKey:@"user"];
-    [request setPostValue:@"125kljf15468" forKey:@"token"];
-    
-    //ovde goce proverva i vraka vrednosti - ako e prv pat, default broj na coins freez i bombs - vraka bombs freez coins statistic error success
-    
-    [request setPostValue:@"cel grad|15*i drugite gradoj|28" forKey:@"friends"];
-    [request setPostValue:@"10" forKey:@"coins"];
-    [request setPostValue:@"10" forKey:@"freez"];
-    [request setPostValue:@"1" forKey:@"bombs"];
-    [request setPostValue:@"some statistics" forKey:@"statistics"];
-     
-
-    [request setDelegate:self];
-     //[request setUploadProgressDelegate:myProgressIndicator];
-    [request startAsynchronous];
-     //NSLog(@"Value: %f",[myProgressIndicator progress]);
-
-     
-     
-     
-     
 }
-- (void)requestFinished:(ASIHTTPRequest *)request
-{
-    // Use when fetching text data
-
-    NSString *responseString = [request responseString];
-    SBJSON *jsonReader = [SBJSON new];
-    jsonData = [jsonReader objectWithString:responseString error:nil];
-
-    NSLog(@"JSON %@",jsonData);
-}
-- (void)requestFailed:(ASIHTTPRequest *)request
-{
-    NSError *error = [request error];
-    NSLog(@"%@",error);
-}  
 - (void)apiGraphUserPermissions {
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [[delegate facebook] requestWithGraphPath:@"me/permissions" andDelegate:self];
@@ -462,7 +420,11 @@ static NSString* kAppId = @"406381349412676";
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
+-(void)gameMode:(id)sender{
+    VsComViewController *controller = [[VsComViewController alloc] initWithNibName:@"VsComViewController" bundle:nil];
+   // pendingApiCallsController = controller;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.0;
 }
@@ -496,7 +458,7 @@ static NSString* kAppId = @"406381349412676";
     [button setTitle:[contentForRow objectAtIndex:indexPath.row]
             forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(menuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(gameMode:) forControlEvents:UIControlEventTouchUpInside];
     button.tag = indexPath.row;
     [cell.contentView addSubview:button];
    // cell.textLabel.text = [contentForRow objectAtIndex:[indexPath row]];
@@ -597,6 +559,8 @@ static NSString* kAppId = @"406381349412676";
     if ([result isKindOfClass:[NSArray class]]) {
         result = [result objectAtIndex:0];
     }
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
     // This callback can be a result of getting the user's basic
     // information or getting the user's permissions.
     if ([result objectForKey:@"name"]) {
@@ -635,10 +599,48 @@ static NSString* kAppId = @"406381349412676";
         [self apiGraphUserPermissions];
     } else {
         // Processing permissions information
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [delegate setUserPermissions:[[result objectForKey:@"data"] objectAtIndex:0]];
     }
+
+    
+    //post to server
+    NSString *userName = [NSString stringWithFormat:@"%@",nameLabel.text];
+   // NSURL *url = [NSURL URLWithString:@"http://thepaperwall.com/appadmin/dbmanipulation/dbmanipulation.php?function=insert"];
+    NSURL *url = [NSURL URLWithString:@"http://thepaperwall.com/appadmin/dbmanipulation/dbmanipulation.php?function=update"];
+    ASIFormDataRequest *asiRequest = [ASIFormDataRequest requestWithURL:url];
+    
+    [asiRequest setPostValue:userName forKey:@"user"];
+    [asiRequest setPostValue:@"654321" forKey:@"token"];
+    // [delegate tokenString]
+
+    
+     //[asiRequest setPostValue:@"cel grad|15*i drugite gradoj|28" forKey:@"friends"];
+     //[asiRequest setPostValue:@"101" forKey:@"coins"];
+     //[asiRequest setPostValue:@"100" forKey:@"freez"];
+     //[asiRequest setPostValue:@"10" forKey:@"bombs"];
+     //[asiRequest setPostValue:@"some statistics asd asd asd " forKey:@"statistics"];
+    
+    
+    [asiRequest setDelegate:self];
+    //[request setUploadProgressDelegate:myProgressIndicator];
+    [asiRequest startAsynchronous];
+    //NSLog(@"Value: %f",[myProgressIndicator progress]);
 }
+- (void)requestFinished:(ASIHTTPRequest *)request
+{
+    // Use when fetching text data
+    
+    NSString *responseString = [request responseString];
+    SBJSON *jsonReader = [SBJSON new];
+    jsonData = [jsonReader objectWithString:responseString error:nil];
+    
+    NSLog(@"JSON %@",jsonData);
+}
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSError *error = [request error];
+    NSLog(@"%@",error);
+}  
 
 /**
  * Called when an error prevents the Facebook API request from completing
