@@ -10,7 +10,6 @@
 
 @interface VsComViewController : UITableViewController
 {
-    NSMutableArray *jsonData;
     NSMutableDictionary *categoryNames;
     int cellTag;
 }

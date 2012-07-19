@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LogInViewController.h"
 #import "MasterViewController.h"
+#import "SBJSON.h"
 static NSString* kAppId = @"406381349412676";
 
 @implementation AppDelegate
@@ -19,6 +20,7 @@ static NSString* kAppId = @"406381349412676";
 @synthesize apiData;
 @synthesize userPermissions;
 @synthesize tokenString;
+@synthesize imagesJsonData;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -28,7 +30,17 @@ static NSString* kAppId = @"406381349412676";
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:logInViewController];
     facebook = [[Facebook alloc] initWithAppId:@"406381349412676" andDelegate:logInViewController];
     apiData = [[DataSet alloc] init];
+    SBJSON *json = [[SBJSON alloc] init];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://thepaperwall.com/appadmin/alljson/images.json"]];
+    //[request setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookieAcceptPolicy:NSHTTPCookieAcceptPolicyNever];
     
+	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	//set data to string with encoding
+	NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+    imagesJsonData = [json objectWithString:json_string error:nil];
+    NSLog(@"%@",imagesJsonData);
     // Initialize user permissions
     userPermissions = [[NSMutableDictionary alloc] initWithCapacity:1];
     self.window.rootViewController = self.navigationController;

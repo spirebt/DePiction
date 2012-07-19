@@ -7,6 +7,7 @@
 //
 
 #import "VsComViewController.h"
+#import "AppDelegate.h"
 #import "SBJSON.h"
 #import "GameViewController.h"
 
@@ -30,21 +31,18 @@
    
     [super viewDidLoad];
 
+
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://thepaperwall.com/appadmin/alljson/images.json"]];
-	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-	//set data to string with encoding
-	NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-    SBJSON *jsonReader = [SBJSON new];
-    jsonData = [jsonReader objectWithString:json_string error:nil];
+    
     categoryNames = [NSMutableDictionary dictionary];
    // NSLog(@"%@",[[jsonData valueForKey:@"categories"] valueForKey:@"cattitle"]);
     
-    for (int i = 0; i< [[[jsonData valueForKey:@"categories"] valueForKey:@"id"]count];i++) {
-        [categoryNames setObject:[[[jsonData valueForKey:@"categories"] valueForKey:@"cattitle"]objectAtIndex:i] forKey:[[[jsonData valueForKey:@"categories"] valueForKey:@"id"]objectAtIndex:i]];
+    for (int i = 0; i< [[[delegate.imagesJsonData valueForKey:@"categories"] valueForKey:@"id"]count];i++) {
+        [categoryNames setObject:[[[delegate.imagesJsonData valueForKey:@"categories"] valueForKey:@"cattitle"]objectAtIndex:i] forKey:[[[delegate.imagesJsonData valueForKey:@"categories"] valueForKey:@"id"]objectAtIndex:i]];
 
     }
-    NSLog(@"%@",categoryNames);
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -121,7 +119,7 @@
     //GO To next View With tag as category ID
     NSString *categoryIdfromTag = [NSString stringWithFormat:@"%d",[button tag]];
     GameViewController *controller = [[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil];
-    // pendingApiCallsController = controller;
+
     controller.categoryId = categoryIdfromTag;
     [self.navigationController pushViewController:controller animated:YES];
 }

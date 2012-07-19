@@ -11,11 +11,18 @@
 @interface GameViewController : UIViewController
 {
     NSString *categoryId;
-    NSMutableArray *jsonData;
     NSMutableArray *imagesArray;
     NSMutableArray *tagsArray;
     NSString *folder;
-
+    UIScrollView *scrollview;
+    NSArray *alphabetArray;
+    NSMutableArray *answerArray;
+    NSMutableArray *randomLetters;
+    NSMutableArray *finalLetters;
+    NSMutableArray *guessArray;
+    NSString *answerString;
+    NSString *imageTag;
+    UIButton *answerButton;
 }
 @property(nonatomic, strong)NSString *categoryId;
 @end

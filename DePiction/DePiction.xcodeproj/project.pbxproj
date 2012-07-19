@@ -20,6 +20,10 @@
 		1B6C99BE15A1F048001DEAE1 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C99B615A1F048001DEAE1 /* ASIDataCompressor.m */; };
 		1B6C99C115A1F053001DEAE1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C99C015A1F053001DEAE1 /* Reachability.m */; };
 		1B88102E15B3FA4C00BF930D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B88102D15B3FA4C00BF930D /* MessageUI.framework */; };
+		1B8CFCBA15B8290400CE3CAD /* freeze_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFCB915B8290400CE3CAD /* freeze_btn.png */; };
+		1B8CFCBC15B82B5C00CE3CAD /* coins_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFCBB15B82B5C00CE3CAD /* coins_bg.png */; };
+		1B8CFCBE15B82C2000CE3CAD /* givenLett_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFCBD15B82C2000CE3CAD /* givenLett_bg.png */; };
+		1B8CFCC015B85D2800CE3CAD /* guessedLett_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFCBF15B85D2800CE3CAD /* guessedLett_bg.png */; };
 		1BAA4C6A15A2DF28009094CE /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BAA4C6915A2DF28009094CE /* FBConnect.bundle */; };
 		1BAA4C7515A2E2F6009094CE /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C99A815A1F048001DEAE1 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1BAA4C7615A2E2FB009094CE /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6C99AA15A1F048001DEAE1 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -103,6 +107,10 @@
 		1B6C99BF15A1F053001DEAE1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1B6C99C015A1F053001DEAE1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		1B88102D15B3FA4C00BF930D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1B8CFCB915B8290400CE3CAD /* freeze_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freeze_btn.png; sourceTree = "<group>"; };
+		1B8CFCBB15B82B5C00CE3CAD /* coins_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coins_bg.png; sourceTree = "<group>"; };
+		1B8CFCBD15B82C2000CE3CAD /* givenLett_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = givenLett_bg.png; sourceTree = "<group>"; };
+		1B8CFCBF15B85D2800CE3CAD /* guessedLett_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guessedLett_bg.png; sourceTree = "<group>"; };
 		1BAA4C6915A2DF28009094CE /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
 		1BAA4C7E15A2E3BB009094CE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1BAA4C8015A2E3C5009094CE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -195,6 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				1B5C058B15B56468003802FD /* background.jpg */,
+				1B8CFCB915B8290400CE3CAD /* freeze_btn.png */,
+				1B8CFCBB15B82B5C00CE3CAD /* coins_bg.png */,
+				1B8CFCBD15B82C2000CE3CAD /* givenLett_bg.png */,
+				1B8CFCBF15B85D2800CE3CAD /* guessedLett_bg.png */,
 			);
 			name = img;
 			sourceTree = "<group>";
@@ -437,6 +449,10 @@
 				1B5C058C15B56468003802FD /* background.jpg in Resources */,
 				1BF0FCBF15B6AC7D000E2F3C /* VsComViewController.xib in Resources */,
 				1BF0FCCE15B6F395000E2F3C /* GameViewController.xib in Resources */,
+				1B8CFCBA15B8290400CE3CAD /* freeze_btn.png in Resources */,
+				1B8CFCBC15B82B5C00CE3CAD /* coins_bg.png in Resources */,
+				1B8CFCBE15B82C2000CE3CAD /* givenLett_bg.png in Resources */,
+				1B8CFCC015B85D2800CE3CAD /* guessedLett_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

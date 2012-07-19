@@ -16,6 +16,8 @@
     DataSet *apiData;
     NSMutableDictionary *userPermissions;
     NSString *tokenString;
+    NSMutableArray *imagesJsonData;
+
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
@@ -30,4 +32,5 @@
 
 @property(nonatomic, strong) NSString *tokenString;
 
+@property(nonatomic, strong) NSMutableArray *imagesJsonData;
 @end
